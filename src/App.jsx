@@ -1,4 +1,21 @@
-import { useEffect, useState } from "react";
+
+
+
+
+
+import axios from "axios";
+import { useEffect } from "react";
+
+export default function App() {
+  useEffect(() => {
+    axios.get("/api/users")
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+  }, []);
+
+  return <h1>App Working</h1>;
+  
+}import { useEffect, useState } from "react";
 import { supabase } from "./lib/supabase";
 import { motion } from "framer-motion";
 import {
